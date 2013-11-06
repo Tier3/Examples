@@ -1,0 +1,8 @@
+---
+applications:
+- name: tier3webhooklistener
+  memory: 256M
+  instances: 1
+  url: tier3webhooklistener.cfapps.io
+  path: .
+  command: node app.js
