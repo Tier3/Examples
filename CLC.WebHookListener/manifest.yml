@@ -1,8 +1,8 @@
 ---
 applications:
-- name: clcwebhooklistener-verify
+- name: clcwebhooklistener
   memory: 256M
   instances: 1
-  url: clcwebhooklistener-verify.cfapps.io
+  url: clcwebhooklistener.cfapps.io
   path: .
   command: node app.js
