@@ -42,6 +42,13 @@ app.post('/webhook/account', function(req, res){
     res.send("ok");
 })
 
+app.post('/webhook/alert', function(req, res){
+
+    var signatureHeader = req.get('Tier3-RsaSha1');
+    BroadcastAlertWebhook(req.body, signatureHeader);
+    res.send("ok");
+})
+
 app.post('/webhook/user', function(req, res){
 
     var signatureHeader = req.get('Tier3-RsaSha1');
@@ -67,6 +74,14 @@ function BroadcastAccountWebhook(data, signatureHeader){
 
     console.log(data);
 }
+
+function BroadcastAlertWebhook(data, signatureHeader){
+
+    io.sockets.emit('webhookalertmessage', data, signatureHeader);
+
+    console.log(data);
+}
+
 
 function BroadcastUserWebhook(data, signatureHeader){
 

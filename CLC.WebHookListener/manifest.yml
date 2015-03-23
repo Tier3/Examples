@@ -1,8 +1,8 @@
 ---
 applications:
-- name: tier3webhooklistener
+- name: clcwebhooklistener-verify
   memory: 256M
   instances: 1
-  url: tier3webhooklistener.cfapps.io
+  url: clcwebhooklistener-verify.cfapps.io
   path: .
   command: node app.js
