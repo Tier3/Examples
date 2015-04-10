@@ -14,7 +14,7 @@ socket.on('webhookacctmessage', function(data, signatureHeader, verify){
     var popoverData = JSON.stringify(data, null, 4).replace(/"/g, '&quot;').replace(/{/g, '&#123;').replace(/}/g, '&#125;');
     popoverData = popoverData + "<br/><br/><b>Signature:</b> " + signatureHeader + "<br/><b>" + verifiedOrNot + "</b>";
 
-    $('#acctchangefeed').append('<div rel="popover" class="webhookmessage" data-content="'+ popoverData +'" title="Account Message">' + data.businessName + '<br>(' + data.alias + ')</div>');
+    $('#acctchangefeed').append('<div rel="popover" class="webhookmessage" data-content="'+ popoverData +'" title="Account Message">' + data.businessName + '<br>(' + data.accountAlias + ')</div>');
     $("[rel=popover]").popover({placement:'right', html:true});
 });
 
@@ -25,7 +25,7 @@ socket.on('webhookalertmessage', function(data, signatureHeader, verify){
     var popoverData = JSON.stringify(data, null, 4).replace(/"/g, '&quot;').replace(/{/g, '&#123;').replace(/}/g, '&#125;');
     popoverData = popoverData + "<br/><br/><b>Signature:</b> " + signatureHeader + "<br/><b>" + verifiedOrNot + "</b>";
 
-    $('#alertchangefeed').append('<div rel="popover" class="webhookmessage" data-content="'+ popoverData +'" title="Account Message">' + data.businessName + '<br>(' + data.alias + ')</div>');
+    $('#alertchangefeed').append('<div rel="popover" class="webhookmessage" data-content="'+ popoverData +'" title="Alert Message">' + data.accountAlias + '</div>');
     $("[rel=popover]").popover({placement:'right', html:true});
 });
 
