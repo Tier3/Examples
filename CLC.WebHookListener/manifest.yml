@@ -3,6 +3,6 @@ applications:
 - name: clcwebhooklistener
   memory: 256M
   instances: 1
-  url: clcwebhooklistener.cfapps.io
+  url: clcwebhooklistener.useast.appfog.ctl.io
   path: .
   command: node app.js
